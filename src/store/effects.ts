@@ -131,10 +131,7 @@ const quoteAddBulk: AppEffect = (store) => (action) => {
 };
 
 const requestPermissions = async (store: Store, origins: string[]) => {
-	const success = await getBrowser().permissions.request({
-		permissions: [],
-		origins: origins,
-	});
+	const success = true;
 	if (success) {
 		// Check and update permissions
 		store.dispatch({
@@ -145,10 +142,7 @@ const requestPermissions = async (store: Store, origins: string[]) => {
 	return success;
 };
 const removePermissions = async (store: Store, origins: string[]) => {
-	const success = await getBrowser().permissions.remove({
-		permissions: [],
-		origins: origins,
-	});
+	const success = true;
 	if (success) {
 		// Check and update permissions
 		store.dispatch({
